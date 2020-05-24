@@ -1,0 +1,12 @@
+.profile__info {
+    display: grid;
+    height: 77px; 
+    width: 428px; 
+    /* grid-template-columns:  380px 48px; 
+    grid-template-rows: 43px 34px;  */
+    grid-template-areas: 
+    "username edit-button"
+    "occupation ." ;
+    align-self: center; 
+    margin-left: 30px; 
+}

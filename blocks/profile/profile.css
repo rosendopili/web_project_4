@@ -5,3 +5,12 @@
 @import url('__info/profile__info.css');
 @import url('__occupation/profile__occupation.css');
 @import url('__username/profile__username.css');
+@import url('__card/profile__card.css'); 
+
+.profile{
+    max-width: 882px; 
+    display: flex; 
+    margin: 0 auto; 
+    justify-content: space-between;
+    padding-top: 36.25px; 
+}

@@ -1,3 +1,11 @@
+@import url('../vendor/normalize.css');
+@import url('../blocks/page/page.css');
+@import url('../blocks/header/header.css');
+@import url('../blocks/main/main.css');
+@import url('../blocks/photo-grid/photo-grid.css');
+@import url('../blocks/profile/profile.css');
+@import url('../blocks/footer/footer.css');
+
 :root{
     --black: #000000; 
     --white: #ffffff; 

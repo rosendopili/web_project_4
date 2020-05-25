@@ -1,0 +1,13 @@
+.photo-grid__caption{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--white);
+    color: var(--black);  
+    max-width: 282px; 
+    height: 80px;
+    border-bottom-left-radius: 10px; 
+    border-bottom-right-radius: 10px; 
+    margin: 0; 
+    padding: 0; 
+}

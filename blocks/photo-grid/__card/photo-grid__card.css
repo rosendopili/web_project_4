@@ -1,0 +1,7 @@
+.photo-grid__card{
+    display: flex; 
+    flex-direction: column; 
+    margin-bottom: 21px; 
+    max-width: 282px; 
+    height: auto; 
+}

@@ -4,3 +4,18 @@
     background-color: var(--black); 
     align-self: center; 
 }
+
+@media only screen and (max-width: 882px){
+    .profile__add-button{
+        margin-right: 18px; 
+    }
+}
+
+@media only screen and (max-width: 670px){
+    .profile__add-button{
+        margin: 36px auto 0 auto; 
+        max-width: 420px; 
+        min-width: 282px; 
+        width: 80%;  
+    }
+}

@@ -3,3 +3,9 @@
     height: 33px; 
     margin-top: 45px; 
 }
+
+@media only screen and (max-width: 882px){
+    .header__logo{
+        margin-left: 27px; 
+    }
+}

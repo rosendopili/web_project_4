@@ -8,3 +8,12 @@
     font-size: 42px;
     line-height: 56px;
 }
+
+@media only screen and (max-width: 670px) {
+    .profile__username{
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 56px;
+        text-align: center;
+    }
+}

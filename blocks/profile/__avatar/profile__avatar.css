@@ -4,3 +4,15 @@
     width: 120px; 
     align-self: center; 
 }
+
+@media only screen and (max-width: 882px){
+ .profile__avatar{
+    margin-left: 27px; 
+ }   
+}
+
+@media only screen and (max-width: 670px){
+    .profile__avatar{
+        margin: 0 auto 14px; 
+    }
+}

@@ -3,3 +3,25 @@
 @import url('__description/photo-grid__description.css');
 @import url('__heart-react/photo-grid__heart-react.css');
 @import url('__image/photo-grid__image.css');
+
+.photo-grid{
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    padding-top: 47.25px; 
+    max-width: 882px; 
+    margin: 0 auto; 
+}
+
+@media only screen and (max-width: 882px){
+    .photo-grid{
+        width: 582px; 
+    }
+}
+
+@media only screen and (max-width: 582px){
+    .photo-grid{
+        width: 320px;  
+        justify-content: space-around;   
+    }
+}

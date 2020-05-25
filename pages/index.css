@@ -6,12 +6,12 @@
 @import url('../blocks/profile/profile.css');
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/hover/hover.css');
+@import url('../blocks/modal/modal.css');
+@import url('../blocks/display/display.css');
 
 :root{
     --black: #000000; 
     --white: #ffffff; 
     --dark-gray: #545454; 
-}
-
-body {
+    --overlay:  rgba(0, 0, 0, 0.5); 
 }

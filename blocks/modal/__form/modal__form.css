@@ -1,0 +1,12 @@
+.modal__form{
+    position: absolute; 
+    width: 430px;
+    height: 330px;
+    top: calc((100vh/2) - 165px); 
+    left: calc((100vw/2) - 215px); 
+    background-color: var(--white); 
+    border-radius: 10px; 
+    display: flex; 
+    flex-direction: column;   
+    text-align: left;   
+}

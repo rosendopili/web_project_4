@@ -25,14 +25,14 @@
 
                         <div class="profile__info">
                         
-                            <p class="profile__username">
+                            <h1 class="profile__username">
                                 Jacques Cousteau
-                            </p>
+                            </h1>
                             <img 
                                 src="assets/Edit.png" 
                                 alt="Edit Pencil" 
                                 class="profile__edit-button hover"
-                                onClick="modal()">
+                                onclick="modal()">
 
                             <p class="profile__occupation">
                                 Explorer
@@ -147,7 +147,17 @@
                     </div>
 
                 </div>
-
+                <div class="display display__display-none"> 
+                <div class="modal">
+                    <div class="modal__form">
+                        <p class="modal__title">Edit Profile</p>
+                        <input type="text" placeholder="username" class="modal__username">
+                        <input type="text" placeholder="occupation" class="modal__occupation">
+                        <button type="submit" class="modal__save-button hover" onclick="editProfile()">Save</button>
+                    </div>
+                    <img src="assets/CloseIcon.png" alt="Close Icon" class="modal__close hover" onclick="closeModal()">
+                </div>
+                </div>
             </main>
 
             <footer class="footer">
@@ -156,5 +166,6 @@
                   </p>
             </footer>
         </div>  
+        <script type="text/javascript" src="js/script.js"></script>
     </body>
 </html>

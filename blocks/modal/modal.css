@@ -1,0 +1,23 @@
+@import url('__display/modal__display.css');
+@import url('__username/modal__username.css'); 
+@import url('__occupation/modal__occupation.css'); 
+@import url('__save-button/modal__save-button.css'); 
+@import url('__form/modal__form.css'); 
+@import url('__close/modal__close.css'); 
+@import url('__title/modal__title.css'); 
+
+
+.modal{
+    position: absolute;
+    width: 100vw; 
+    height: 100vh;
+    height: 100%;  
+    width: 100%; 
+    z-index: 1; 
+    background-color:var(--overlay); 
+    top: 0; 
+    left: 0; 
+    display: flex; 
+    color: var(--black); 
+}
+

@@ -1,0 +1,7 @@
+.modal__close{
+    position: absolute; 
+    height: 40.7px;  
+    width: 40.7px; 
+    top: calc((100vh/2) - 165px - 30px); 
+    right: calc((100vw/2) - 215px - 30px); 
+}

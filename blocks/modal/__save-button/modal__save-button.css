@@ -1,0 +1,9 @@
+.modal__save-button {
+    margin: 48px auto 36.51px auto; 
+    width: 358px; 
+    height: 50.15px; 
+    border: none; 
+    border-radius: 2px; 
+    background-color: var(--black); 
+    color: var(--white); 
+}

@@ -1,0 +1,11 @@
+.modal__username{
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, .2);  
+    width: 358px; 
+    margin: 29.74px auto 0 auto; 
+    opacity: 1; 
+}

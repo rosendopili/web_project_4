@@ -3,6 +3,8 @@
     width: 150px; 
     background-color: var(--black); 
     align-self: center; 
+    border: 1px solid var(--white); 
+    border-radius: 2px; 
 }
 
 @media only screen and (max-width: 882px){

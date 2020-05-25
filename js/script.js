@@ -1,8 +1,9 @@
-const display = document.querySelector('.display'); 
-const body = document.querySelector('body'); 
-const username = document.querySelector('.profile__username').innerHTML; 
-const occupation = document.querySelector('.profile__occupation').innerHTML; 
-const form = document.querySelector('.modal__form');
+let display = document.querySelector('.display'); 
+let body = document.querySelector('body'); 
+let username = document.querySelector('.profile__username').innerHTML; 
+let occupation = document.querySelector('.profile__occupation').innerHTML; 
+let form = document.querySelector('.modal__form');
+let saveButton = document.querySelector('.modal__save-button'); 
 
 function modal(){
     display.classList.remove('display__display-none');
@@ -16,13 +17,15 @@ function closeModal(){
     body.style.overflowY = 'scroll'; 
 }
 
-// function editProfile(){
-//     let newUsername = document.querySelector('.modal__username'); 
-//     let newOccupation = document.querySelector('.modal__occupation'); 
+function editProfile(){
+    let newUsername = document.querySelector('.modal__username').value; 
+    let newOccupation = document.querySelector('.modal__occupation').value; 
     
-//     username.insertAdjacentHTML('beforeend',`<h1>${newUsername.value}</h1>`); 
+    document.querySelector('.profile__username').innerHTML = newUsername; 
+    document.querySelector('.profile__occupation').innerHTML = newOccupation; 
 
-//     username.value = ""; 
+    closeModal(); 
+}
 
-// }
+saveButton.addEventListener('click', editProfile);
 

@@ -16,7 +16,7 @@
             </header>
             <main class="main">
                 
-                <div class="profile">
+                <section class="profile">
                     <div class="profile__card">
                             <img 
                                 src="assets/ProfilePicture.png" 
@@ -28,11 +28,9 @@
                             <h1 class="profile__username">
                                 Jacques Cousteau
                             </h1>
-                            <img 
-                                src="assets/Edit.png" 
-                                alt="Edit Pencil" 
+                            <button 
                                 class="profile__edit-button hover"
-                                onclick="modal()">
+                                ></button>
 
                             <p class="profile__occupation">
                                 Explorer
@@ -41,14 +39,10 @@
                     </div>
 
                     <button class="profile__add-button hover">
-                       <img 
-                            src="assets/Plus.png" 
-                            alt="Plus Sign" 
-                            class="profile__add-button-image"> 
                     </button>
-                </div>
+                </section>
 
-                <div class="photo-grid">
+                <section class="photo-grid">
                     
                     <div class="photo-grid__card">
                         <img 
@@ -56,13 +50,11 @@
                             alt="A river flanked by evergreen trees" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
+                            <h2 class="photo-grid__description">
                                 Yosemite Valley
-                            </p>
-                            <img 
-                                src="assets/HeartReact.png" 
-                                alt="A heart emoji" 
-                                class="photo-grid__heart-react">
+                            </h2>
+                            <button
+                                class="photo-grid__heart-react"></button>
                         </div>
                     </div>
 
@@ -72,9 +64,9 @@
                             alt="A blue lake reflecting two mountain peaks" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
+                            <h2 class="photo-grid__description">
                                 Lake Louise
-                            </p>
+                            </h2>
                             <img 
                                 src="assets/HeartReact.png" 
                                 alt="A heart emoji" 
@@ -88,9 +80,9 @@
                             alt="A mountain range at sunset" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
+                            <h2 class="photo-grid__description">
                                 Bald Mountains
-                            </p>
+                            </h2>
                             <img 
                                 src="assets/HeartReact.png" 
                                 alt="A heart emoji" 
@@ -104,9 +96,9 @@
                             alt="A nighttime view of mountain peaks" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
+                            <h2 class="photo-grid__description">
                                 Latemar
-                            </p>
+                            </h2>
                             <img 
                                 src="assets/HeartReact.png" 
                                 alt="A heart emoji" 
@@ -120,9 +112,9 @@
                             alt="A lake reflecting a mountain range" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
-                                Vanoise National... 
-                            </p>
+                            <h2 class="photo-grid__description">
+                                Vanoise National
+                            </h2>
                             <img 
                                 src="assets/HeartReact.png" 
                                 alt="A heart emoji" 
@@ -136,9 +128,9 @@
                             alt="A boat by a dock in a clear lake" 
                             class="photo-grid__image">
                         <div class="photo-grid__caption">
-                            <p class="photo-grid__description">
+                            <h2 class="photo-grid__description">
                                 Lago di Braies
-                            </p>
+                            </h2>
                             <img 
                                 src="assets/HeartReact.png" 
                                 alt="A heart emoji" 
@@ -146,16 +138,16 @@
                         </div>
                     </div>
 
-                </div>
-                <div class="modal__container"> 
+                </section>
+                <div class="modal__container modal__off"> 
                 <div class="modal">
                     <div class="modal__form">
                         <p class="modal__title">Edit Profile</p>
-                        <input type="text" placeholder="Name" class="modal__username">
-                        <input type="text" placeholder="About Me" class="modal__occupation">
+                        <input type="text" placeholder="Name" class="modal__username" maxlength="16">
+                        <input type="text" placeholder="About Me" class="modal__occupation" maxlength="20">
                         <button class="modal__save-button hover">Save</button>
                     </div>
-                    <img src="assets/CloseIcon.png" alt="Close Icon" class="modal__close hover" onclick="closeModal()">
+                    <button class="modal__close hover"></button>
                 </div>
                 </div>
             </main>
@@ -166,6 +158,6 @@
                   </p>
             </footer>
         </div>  
-        <script type="text/javascript" src="js/script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

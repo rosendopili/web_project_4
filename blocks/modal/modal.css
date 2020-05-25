@@ -5,6 +5,7 @@
 @import url('__form/modal__form.css'); 
 @import url('__close/modal__close.css'); 
 @import url('__title/modal__title.css'); 
+@import url('__container/modal__container.css');
 
 
 .modal{

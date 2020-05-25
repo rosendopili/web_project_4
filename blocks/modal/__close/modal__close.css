@@ -4,7 +4,7 @@
     width: 40.7px; 
     top: calc((100vh/2) - 165px - 40.7px); 
     right: calc((100vw/2) - 215px - 40.7px); 
-    background-image: url(../../../assets/CloseIcon.png);
+    background-image: url(../../../assets/CloseIcon.svg);
     background-repeat: no-repeat; 
     background-color: transparent; 
     background-position: center;

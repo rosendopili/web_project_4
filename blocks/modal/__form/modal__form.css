@@ -1,5 +1,5 @@
 .modal__form{
-    position: absolute; 
+    position: fixed; 
     width: 430px;
     height: 330px;
     top: calc((100vh/2) - 165px); 

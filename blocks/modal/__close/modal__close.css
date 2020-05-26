@@ -1,5 +1,5 @@
 .modal__close{
-    position: absolute; 
+    position: fixed; 
     height: 40.7px;  
     width: 40.7px; 
     top: calc((100vh/2) - 165px - 40.7px); 

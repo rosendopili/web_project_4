@@ -7,9 +7,6 @@
 @import url('__title/modal__title.css'); 
 @import url('__container/modal__container.css');
 @import url('__off/modal__off.css'); 
-@import url('__on/modal__on.css'); 
-
-
 
 .modal{
     position: absolute;
@@ -20,6 +17,6 @@
     top: 0; 
     left: 0; 
     display: flex; 
-    color: var(--black); 
+    color: var(--black);  
 }
 

@@ -9,6 +9,7 @@
 @import url('../blocks/hover/hover.css');
 @import url('../blocks/modal/modal.css');
 @import url('../blocks/display/display.css');
+@import url('../blocks/scroll/scroll.css'); 
 
 :root{
     --black: #000000; 

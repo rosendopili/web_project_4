@@ -10,3 +10,10 @@
     background-position: center;
     border: none; 
 }
+
+@media only screen and (max-width: 500px){
+    .modal__close{
+        top: calc((100vh/2) - 220px); 
+        right: calc((100vw/2) - 20.35px); 
+    }
+}

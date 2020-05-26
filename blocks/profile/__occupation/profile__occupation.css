@@ -7,7 +7,6 @@
     margin: 0; 
     max-width: 318px; 
     text-overflow: clip; 
-    overflow: hidden; 
     white-space: nowrap;
 }
 

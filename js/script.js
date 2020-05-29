@@ -1,7 +1,7 @@
 let modalContainer = document.querySelector('.modal__container'); 
 let body = document.querySelector('body'); 
-let username = document.querySelector('.profile__username').textContent; 
-let occupation = document.querySelector('.profile__occupation').textContent; 
+let username = document.querySelector('.profile__username'); 
+let occupation = document.querySelector('.profile__occupation'); 
 let form = document.querySelector('.modal__form');
 let saveButton = document.querySelector('.modal__save-button'); 
 let newUsername = document.querySelector('.modal__username'); 
@@ -20,11 +20,13 @@ function modal(){
 
 
 function editProfile(){
-    document.querySelector('.profile__username').textContent = newUsername.value; 
-    document.querySelector('.profile__occupation').textContent = newOccupation.value; 
+    username.textContent = newUsername.value; 
+    occupation.textContent = newOccupation.value; 
 
     modal(); 
 }
+
+
 
 saveButton.addEventListener('click', editProfile);
 closeIcon.addEventListener('click', modal); 

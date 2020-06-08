@@ -42,6 +42,7 @@ let imageCloseIcon = document.querySelector('.imageModal__close');
 let editButton = document.querySelector('.profile__edit-button'); 
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
+const photoTemplate = document.querySelector('#photo-grid__template').content; 
 
 function imageLoad() {
     for (let i = 0; i < initialCards.length; i++) {
@@ -101,21 +102,23 @@ function imageModal(){
     preventScroll(); 
 }
 
-function addPhoto(){
+function addPhoto(newLinkValue, newTitleValue){
+    // const photoElement = photoTemplate.cloneNode(true); 
+
+    // photoElement.querySelector(".photo-grid__image").textContent = newLinkValue; 
+    // photoElement.querySelector(".photo-grid__description").textContent = newTitleValue; 
+
+    // photoGrid.append(photoElement); 
+
     let newPhoto = {
         name: newTitle.value, 
         link: newLink.value
     }
-    initialCards.push(newPhoto); 
+    initialCards.unshift(newPhoto); 
 
-    console.log(newPhoto); 
-    console.log(initialCards); 
-
-    imageModal(); 
-
-    let node = photoGrid; 
-    node.innerHTML = ""; 
+    photoGrid.innerHTML = ""; 
     imageLoad(); 
+    imageModal(); 
 }
 
 saveButton.addEventListener('click', editProfile);

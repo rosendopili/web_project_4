@@ -47,9 +47,7 @@ let photoTemplate = document.querySelector('#photo-grid__template').content;
 
 const addImageCard = (data) => {
     const photo = photoTemplate.cloneNode(true); 
-    let photoGridCard = photo.querySelector('.photo-grid__card'); 
     let photoGridImage = photo.querySelector('.photo-grid__image'); 
-    let photoGridCaption = photo.querySelector('.photo-grid__caption'); 
     let photoGridDescription = photo.querySelector('.photo-grid__description'); 
     let photoGridHeart = photo.querySelector('.photo-grid__heart-react');
     let deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
@@ -61,7 +59,9 @@ const addImageCard = (data) => {
         photoGridHeart.classList.toggle('photo-grid__heart-react_dark')
      });
 
-     console.log()
+    deleteIcon.addEventListener('click', (e)=> {
+    e.target.closest('.photo-grid__card').remove();
+    });
 
     return photo; 
 }

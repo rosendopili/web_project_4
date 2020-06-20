@@ -35,8 +35,8 @@ let form = document.querySelector('.modal__form');
 let saveButton = document.querySelector('.modal__save-button'); 
 let newUsername = document.querySelector('.modal__username'); 
 let newOccupation = document.querySelector('.modal__occupation'); 
-let newTitle = document.querySelector('.modal__image-title').textContent; 
-let newLink = document.querySelector('.modal__link').textContent; 
+let newTitle = document.querySelector('.modal__image-title'); 
+let newLink = document.querySelector('.modal__link'); 
 let closeIcon = document.querySelector('.modal__close'); 
 let imageCloseIcon = document.querySelector('.imageModal__close'); 
 let editButton = document.querySelector('.profile__edit-button'); 
@@ -59,12 +59,12 @@ const addImageCard = (data) => {
     return photo; 
 }
 
-const loadImageCard = (newName, newLink) => {
-    photoGrid.prepend(addImageCard(newName, newLink)); 
+const loadImageCard = (data) => {
+    photoGrid.prepend(addImageCard(data)); 
 }
 
-initialCards.forEach((newName, newLink) =>{
-    loadImageCard(newName, newLink); 
+initialCards.forEach((data) =>{
+    loadImageCard(data); 
 })
 
 
@@ -93,11 +93,14 @@ function imageModal(){
     preventScroll(); 
 }
 
-function addNewImageCard(newTitle, newLink){
+
+const addNewImageCard = () => {
+
     loadImageCard({
         name: newTitle.value, 
         link: newLink.value
     }); 
+
     imageModal(); 
 }
 

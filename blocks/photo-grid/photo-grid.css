@@ -2,7 +2,9 @@
 @import url('__card/photo-grid__card.css');
 @import url('__description/photo-grid__description.css');
 @import url('__heart-react/photo-grid__heart-react.css');
+@import url('__heart-react/__heart-react_dark/photo-grid__heart-react_dark.css');
 @import url('__image/photo-grid__image.css');
+@import url('__delete-icon/photo-grid__delete-icon.css');
 
 .photo-grid{
     display: flex; 

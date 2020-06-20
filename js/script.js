@@ -51,10 +51,17 @@ const addImageCard = (data) => {
     let photoGridImage = photo.querySelector('.photo-grid__image'); 
     let photoGridCaption = photo.querySelector('.photo-grid__caption'); 
     let photoGridDescription = photo.querySelector('.photo-grid__description'); 
-    let photoGridHeart = photo.querySelector('.photo-grid__heart-react'); 
+    let photoGridHeart = photo.querySelector('.photo-grid__heart-react');
+    let deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
 
     photoGridDescription.textContent = data.name; 
     photoGridImage.style.backgroundImage = `url(${data.link})`; 
+
+    photoGridHeart.addEventListener('click', ()=> {
+        photoGridHeart.classList.toggle('photo-grid__heart-react_dark')
+     });
+
+     console.log()
 
     return photo; 
 }
@@ -77,7 +84,8 @@ function preventScroll(){
 }
 
 function modal(){
-    modalContainer.classList.toggle('modal__off');  
+    modalContainer.classList.toggle('modal__off'); 
+    
     preventScroll(); 
 }
 
@@ -90,18 +98,21 @@ function editProfile(){
 
 function imageModal(){
     imageModalContainer.classList.toggle('modal__off'); 
+
     preventScroll(); 
 }
 
 
 const addNewImageCard = () => {
-
     loadImageCard({
         name: newTitle.value, 
         link: newLink.value
     }); 
 
-    imageModal(); 
+    imageModal();
+
+    newTitle.value = ""; 
+    newLink.value = ""; 
 }
 
 saveButton.addEventListener('click', editProfile);

@@ -1,0 +1,11 @@
+.photo-grid__delete-icon {
+    position: absolute;
+    width: 21px;
+    height: 20.3px;
+    align-self: center;
+    background:  url("../../../assets/TrashLid.svg") no-repeat center bottom, url("../../../assets/TrashCan.svg") no-repeat center top; 
+    border: none;
+    top: 18px;
+    right: 15px;
+    z-index: 1;
+  }

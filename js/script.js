@@ -45,14 +45,16 @@ let savePhotoButton = document.querySelector('.modal__create-button');
 let photoTemplate = document.querySelector('#photo-grid__template').content;
 let imagePopupModal = document.querySelector('.popup-modal__container'); 
 let imagePopupCloseIcon = document.querySelector('.popup-modal__close')
-
+let imagePopup = document.querySelector('.image-popup__image');
+let imagePopupDescription = document.querySelector('.image-popup__description');
+let imagePopupClose = document.querySelector('.popup-modal__close');   
 
 function imagePopupOpen(data) {
-    let imagePopup = document.querySelector(".image-popup__image");
-    let imagePopupDescription = document.querySelector(".image-popup__description");    
-    
-    imagePopup.src = data.link;
-    imagePopupDescription.textContent = data.name;
+    console.log(data.link + " data-link"); 
+    console.log(imagePopup.src + " src link"); 
+
+    imagePopup.setAttribute('src', `${data.link}`) 
+    imagePopupDescription.textContent = `${data.name}`; 
  }
 
 
@@ -75,8 +77,7 @@ const addImageCard = (data) => {
     e.target.closest('.photo-grid__card').remove();
     });
 
-    photoGridImage.addEventListener('click', (e) =>{
-        e.preventDefault(); 
+    photoGridImage.addEventListener('click', () =>{
         imagePopupOpen(data); 
         popupModal(); 
     });
@@ -135,8 +136,11 @@ const addNewImageCard = () => {
 }
 
 function popupModal(){
-    imagePopupModal.classList.toggle('.modal__off'); 
+    console.log(imagePopupModal.classList); 
+
+    imagePopupModal.classList.toggle('modal__off'); 
     preventScroll(); 
+    console.log(imagePopupModal.classList + " after"); 
 }
 
 
@@ -146,4 +150,5 @@ editButton.addEventListener('click', modal);
 savePhotoButton.addEventListener('click', addNewImageCard); 
 addPhotoButton.addEventListener('click', imageModal); 
 imageCloseIcon.addEventListener('click', imageModal); 
+imagePopupClose.addEventListener('click', popupModal); 
 

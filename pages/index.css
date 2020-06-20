@@ -10,10 +10,12 @@
 @import url('../blocks/modal/modal.css');
 @import url('../blocks/display/display.css');
 @import url('../blocks/scroll/scroll.css'); 
+@import url('../blocks/image-popup/image-popup.css'); 
 
 :root{
     --black: #000000; 
     --white: #ffffff; 
     --dark-gray: #545454; 
     --overlay:  rgba(0, 0, 0, .5); 
+    --dark-overlay:  rgba(0, 0, 0, .9);
 }

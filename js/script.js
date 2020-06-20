@@ -43,6 +43,17 @@ let editButton = document.querySelector('.profile__edit-button');
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
 let photoTemplate = document.querySelector('#photo-grid__template').content;
+let imagePopupModal = document.querySelector('.popup-modal__container'); 
+let imagePopupCloseIcon = document.querySelector('.popup-modal__close')
+
+
+function imagePopupOpen(data) {
+    let imagePopup = document.querySelector(".image-popup__image");
+    let imagePopupDescription = document.querySelector(".image-popup__description");    
+    
+    imagePopup.src = data.link;
+    imagePopupDescription.textContent = data.name;
+ }
 
 
 const addImageCard = (data) => {
@@ -51,6 +62,7 @@ const addImageCard = (data) => {
     let photoGridDescription = photo.querySelector('.photo-grid__description'); 
     let photoGridHeart = photo.querySelector('.photo-grid__heart-react');
     let deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
+   
 
     photoGridDescription.textContent = data.name; 
     photoGridImage.style.backgroundImage = `url(${data.link})`; 
@@ -62,6 +74,13 @@ const addImageCard = (data) => {
     deleteIcon.addEventListener('click', (e)=> {
     e.target.closest('.photo-grid__card').remove();
     });
+
+    photoGridImage.addEventListener('click', (e) =>{
+        e.preventDefault(); 
+        imagePopupOpen(data); 
+        popupModal(); 
+    });
+
 
     return photo; 
 }
@@ -114,6 +133,12 @@ const addNewImageCard = () => {
     newTitle.value = ""; 
     newLink.value = ""; 
 }
+
+function popupModal(){
+    imagePopupModal.classList.toggle('.modal__off'); 
+    preventScroll(); 
+}
+
 
 saveButton.addEventListener('click', editProfile);
 closeIcon.addEventListener('click', modal); 

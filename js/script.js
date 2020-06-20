@@ -26,7 +26,7 @@ const initialCards = [
 ];
 
 let photoGrid = document.querySelector('.photo-grid'); 
-let modalContainer = document.querySelector('.modal__container'); 
+let profileModalContainer = document.querySelector('.modal__container'); 
 let imageModalContainer = document.querySelector('.imageModal__container'); 
 let body = document.querySelector('body'); 
 let username = document.querySelector('.profile__username'); 
@@ -37,7 +37,7 @@ let newUsername = document.querySelector('.modal__username');
 let newOccupation = document.querySelector('.modal__occupation'); 
 let newTitle = document.querySelector('.modal__image-title'); 
 let newLink = document.querySelector('.modal__link'); 
-let closeIcon = document.querySelector('.modal__close'); 
+let profileCloseIcon = document.querySelector('.profile-modal__close'); 
 let imageCloseIcon = document.querySelector('.imageModal__close'); 
 let editButton = document.querySelector('.profile__edit-button'); 
 let addPhotoButton = document.querySelector('.profile__add-button'); 
@@ -50,9 +50,6 @@ let imagePopupDescription = document.querySelector('.image-popup__description');
 let imagePopupClose = document.querySelector('.popup-modal__close');   
 
 function imagePopupOpen(data) {
-    console.log(data.link + " data-link"); 
-    console.log(imagePopup.src + " src link"); 
-
     imagePopup.setAttribute('src', `${data.link}`) 
     imagePopupDescription.textContent = `${data.name}`; 
  }
@@ -82,7 +79,6 @@ const addImageCard = (data) => {
         popupModal(); 
     });
 
-
     return photo; 
 }
 
@@ -103,22 +99,22 @@ function preventScroll(){
     }
 }
 
-function modal(){
-    modalContainer.classList.toggle('modal__off'); 
-    
+function profileModal(){
+    profileModalContainer.classList.toggle('modal__off'); 
     preventScroll(); 
 }
+
 
 function editProfile(){
     username.textContent = newUsername.value; 
     occupation.textContent = newOccupation.value; 
-
     modal(); 
+    newUsername.value = ""; 
+    newOccupation.value = ""; 
 }
 
 function imageModal(){
     imageModalContainer.classList.toggle('modal__off'); 
-
     preventScroll(); 
 }
 
@@ -128,25 +124,20 @@ const addNewImageCard = () => {
         name: newTitle.value, 
         link: newLink.value
     }); 
-
     imageModal();
-
     newTitle.value = ""; 
     newLink.value = ""; 
 }
 
 function popupModal(){
-    console.log(imagePopupModal.classList); 
-
     imagePopupModal.classList.toggle('modal__off'); 
     preventScroll(); 
-    console.log(imagePopupModal.classList + " after"); 
 }
 
 
 saveButton.addEventListener('click', editProfile);
-closeIcon.addEventListener('click', modal); 
-editButton.addEventListener('click', modal); 
+profileCloseIcon.addEventListener('click', profileModal); 
+editButton.addEventListener('click', profileModal); 
 savePhotoButton.addEventListener('click', addNewImageCard); 
 addPhotoButton.addEventListener('click', imageModal); 
 imageCloseIcon.addEventListener('click', imageModal); 

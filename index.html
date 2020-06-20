@@ -42,40 +42,28 @@
                 </section>
 
                 <section class="photo-grid">
-
-                    <template id="photo-grid__template"> 
-                        <div class="photo-grid__card">
-                            <button class="photo-grid__delete-icon hover"></button>
-                            <div class="photo-grid__image"
-                                ></div> 
-                            <div class="photo-grid__caption">
-                                <h2 class="photo-grid__description">
-                                </h2>
-                                <button class="photo-grid__heart-react hover"></button>
-                            </div>
-                        </div>
-                    </template>
-
-                    <div class="popup-modal__container modal__off"> 
-                        <div class="modal_dark">
-                            <div class="modal__form">
-                                <figure class="image-popup">
-
-                                    <img 
-                                        src="/#"
-                                        class="image-popup__image" 
-                                        alt="card image">
-                                    <figcaption
-                                        class="image-popup__description">this is a caption
-                                    </figcaption>
-                                  
-                                </figure>
-
-                            </div>
-                            <button class="modal__close popup-modal__close hover"></button>
-                        </div>
                     
                 </section>
+
+                <div 
+                    class="popup-modal__container modal__off"> 
+                    <div class="modal_dark">
+                        <div class="modal__form">
+                            <figure class="image-popup">
+
+                                <img 
+                                    src="/#"
+                                    class="image-popup__image" 
+                                    alt="card image">
+                                <figcaption
+                                    class="image-popup__description">
+                                </figcaption>
+                              
+                            </figure>
+
+                        </div>
+                        <button class="modal__close popup-modal__close hover"></button>
+                    </div>
 
                 <div class="modal__container modal__off"> 
                 <div class="modal">
@@ -85,7 +73,7 @@
                         <input type="text" placeholder="About Me" class="modal__input modal__occupation" maxlength="20">
                         <button class="modal__button modal__save-button hover">Save</button>
                     </div>
-                    <button class="modal__close hover"></button>
+                    <button class="modal__close profile-modal__close hover"></button>
                 </div>
                 </div>
 
@@ -101,6 +89,19 @@
                     </div>
                     </div>
             </main>
+
+            <template id="photo-grid__template"> 
+                <div class="photo-grid__card">
+                    <button class="photo-grid__delete-icon hover"></button>
+                    <div class="photo-grid__image"
+                        ></div> 
+                    <div class="photo-grid__caption">
+                        <h2 class="photo-grid__description">
+                        </h2>
+                        <button class="photo-grid__heart-react hover"></button>
+                    </div>
+                </div>
+            </template>
 
             <footer class="footer">
                 <p class="footer__copyright">

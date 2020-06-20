@@ -1,4 +1,4 @@
-let initialCards = [
+const initialCards = [
     {
         name: "Yosemite Valley",
         link: "https://code.s3.yandex.net/web-code/yosemite.jpg"
@@ -35,47 +35,38 @@ let form = document.querySelector('.modal__form');
 let saveButton = document.querySelector('.modal__save-button'); 
 let newUsername = document.querySelector('.modal__username'); 
 let newOccupation = document.querySelector('.modal__occupation'); 
-let newTitle = document.querySelector('.modal__image-title'); 
-let newLink = document.querySelector('.modal__link'); 
+let newTitle = document.querySelector('.modal__image-title').textContent; 
+let newLink = document.querySelector('.modal__link').textContent; 
 let closeIcon = document.querySelector('.modal__close'); 
 let imageCloseIcon = document.querySelector('.imageModal__close'); 
 let editButton = document.querySelector('.profile__edit-button'); 
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
-const photoTemplate = document.querySelector('#photo-grid__template').content; 
+let photoTemplate = document.querySelector('#photo-grid__template').content;
 
-function imageLoad() {
-    for (let i = 0; i < initialCards.length; i++) {
-      let photoGridCard = document.createElement('div'); 
-      photoGridCard.classList.add('photo-grid__card'); 
-      photoGridCard.setAttribute('data-id', i); 
 
-      let photoGridImage = document.createElement('img');
-      photoGridImage.classList.add('photo-grid__image')
-      photoGridImage.setAttribute('src', initialCards[i].link); 
+const addImageCard = (data) => {
+    const photo = photoTemplate.cloneNode(true); 
+    let photoGridCard = photo.querySelector('.photo-grid__card'); 
+    let photoGridImage = photo.querySelector('.photo-grid__image'); 
+    let photoGridCaption = photo.querySelector('.photo-grid__caption'); 
+    let photoGridDescription = photo.querySelector('.photo-grid__description'); 
+    let photoGridHeart = photo.querySelector('.photo-grid__heart-react'); 
 
-      let photoGridCaption = document.createElement('div'); 
-      photoGridCaption.classList.add('photo-grid__caption'); 
+    photoGridDescription.textContent = data.name; 
+    photoGridImage.style.backgroundImage = `url(${data.link})`; 
 
-      let photoGridDescription = document.createElement('h2'); 
-      photoGridDescription.classList.add('photo-grid__description')
-      photoGridDescription.textContent = initialCards[i].name; 
-      
-      let photoGridHeartReact = document.createElement('button'); 
-      photoGridHeartReact.classList.add('photo-grid__heart-react'); 
-
-      photoGrid.appendChild(photoGridCard); 
-
-      photoGridCaption.appendChild(photoGridDescription); 
-      photoGridCaption.appendChild(photoGridHeartReact); 
-
-      photoGridCard.appendChild(photoGridImage); 
-      photoGridCard.appendChild(photoGridCaption); 
-
-    }
+    return photo; 
 }
 
-imageLoad(); 
+const loadImageCard = (newName, newLink) => {
+    photoGrid.prepend(addImageCard(newName, newLink)); 
+}
+
+initialCards.forEach((newName, newLink) =>{
+    loadImageCard(newName, newLink); 
+})
+
 
 function preventScroll(){
     if (body.classList.contains('scroll') !== true){
@@ -102,29 +93,18 @@ function imageModal(){
     preventScroll(); 
 }
 
-function addPhoto(newLinkValue, newTitleValue){
-    // const photoElement = photoTemplate.cloneNode(true); 
-
-    // photoElement.querySelector(".photo-grid__image").textContent = newLinkValue; 
-    // photoElement.querySelector(".photo-grid__description").textContent = newTitleValue; 
-
-    // photoGrid.append(photoElement); 
-
-    let newPhoto = {
+function addNewImageCard(newTitle, newLink){
+    loadImageCard({
         name: newTitle.value, 
         link: newLink.value
-    }
-    initialCards.unshift(newPhoto); 
-
-    photoGrid.innerHTML = ""; 
-    imageLoad(); 
+    }); 
     imageModal(); 
 }
 
 saveButton.addEventListener('click', editProfile);
 closeIcon.addEventListener('click', modal); 
 editButton.addEventListener('click', modal); 
-savePhotoButton.addEventListener('click', addPhoto); 
+savePhotoButton.addEventListener('click', addNewImageCard); 
 addPhotoButton.addEventListener('click', imageModal); 
 imageCloseIcon.addEventListener('click', imageModal); 
 

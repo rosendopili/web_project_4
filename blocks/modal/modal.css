@@ -6,6 +6,7 @@
 @import url('__title/modal__title.css'); 
 @import url('__container/modal__container.css');
 @import url('__off/modal__off.css'); 
+@import url('__on/modal__on.css'); 
 @import url('__modal_dark/modal_dark.css');
 
 .modal{
@@ -19,3 +20,4 @@
     display: flex; 
     color: var(--black);  
 }
+

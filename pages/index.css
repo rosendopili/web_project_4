@@ -18,4 +18,5 @@
     --dark-gray: #545454; 
     --overlay:  rgba(0, 0, 0, .5); 
     --dark-overlay:  rgba(0, 0, 0, .9);
+    --light-gray: #C4C4C4;
 }

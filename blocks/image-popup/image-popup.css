@@ -7,3 +7,10 @@
     width: 100%;
     height: 100%;
 }
+
+@media only screen and (max-width: 415px){
+    .image-popup{
+        width: 240px; 
+        height: auto; 
+    }
+}

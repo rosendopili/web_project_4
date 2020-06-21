@@ -8,6 +8,7 @@
     background-repeat: no-repeat; 
     background-color: transparent; 
     background-position: center;
+    object-fit: contain; 
     border: none; 
 }
 
@@ -15,5 +16,14 @@
     .modal__close{
         top: calc((100vh/2) - 220px); 
         right: calc((100vw/2) - 20.35px); 
+    }
+}
+
+@media only screen and (max-width: 320px){
+    .modal__close{
+        width: 21px; 
+        height: 21px; 
+        right: calc((100vw/2) - 142px); 
+        top: calc((100vh/2) - 151px); 
     }
 }

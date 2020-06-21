@@ -10,3 +10,12 @@
     flex-direction: column;   
     text-align: left;   
 }
+
+@media only screen and (max-width: 415px){
+    .modal__form{
+        width: 240px; 
+        height: auto; 
+        left: calc((100vw/2) - 120px);
+        top: calc((100vh/2) - 129px);
+    }
+}

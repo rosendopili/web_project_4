@@ -44,21 +44,20 @@ let editButton = document.querySelector('.profile__edit-button');
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
 let photoTemplate = document.querySelector('#photo-grid__template').content;
- 
 let imagePopupCloseIcon = document.querySelector('.popup-modal__close')
 let imagePopup = document.querySelector('.image-popup__image');
 let imagePopupDescription = document.querySelector('.image-popup__description');
 
+const preventScroll = () =>{
+    body.classList.toggle('scroll'); 
+}
+
 const modalToggle = (modal) => {
-    console.log(profileModalContainer); 
-    console.log(imageModalContainer); 
-    console.log(profileModalContainer.classList); 
-    console.log(imageModalContainer.classList); 
     modal.classList.toggle('modal__off'); 
     preventScroll(); 
 }
 
-function imagePopupOpen(data) {
+const imagePopupOpen = (data) => {
     imagePopup.setAttribute('src', `${data.link}`) 
     imagePopupDescription.textContent = `${data.name}`; 
  }
@@ -99,10 +98,6 @@ initialCards.forEach((data) =>{
     loadImageCard(data); 
 })
 
-function preventScroll(){
-    body.classList.toggle('scroll'); 
-}
-
 saveButton.addEventListener('click', () => {
     username.textContent = newUsername.value; 
     occupation.textContent = newOccupation.value;
@@ -120,32 +115,26 @@ savePhotoButton.addEventListener('click', () => {
     }); 
 
     modalToggle(imageModalContainer);
-    
+
     newTitle.value = ""; 
     newLink.value = ""; 
 }); 
 
-
 editButton.addEventListener('click', () => {
-    console.log(profileModalContainer.classList); 
     modalToggle(profileModalContainer); 
-    preventScroll(); 
 })
 
 profileCloseIcon.addEventListener('click', () =>{
-    modalToggle(profileModalContainer)
+    modalToggle(profileModalContainer); 
 }); 
 
 addPhotoButton.addEventListener('click', () =>{
-    console.log(imageModalContainer.classList); 
     modalToggle(imageModalContainer)
-    preventScroll(); 
 }); 
 
 imageCloseIcon.addEventListener('click', () => {
     modalToggle(imageModalContainer); 
 }); 
-
 
 imagePopupCloseIcon.addEventListener('click', () =>{
     modalToggle(imagePopupModalContainer); 

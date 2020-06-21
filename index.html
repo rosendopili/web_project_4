@@ -45,49 +45,46 @@
                     
                 </section>
 
-                <div class="profile-modal__container modal__container"> 
+            <form class="profile-modal__container modal__container"> 
                 <div class="modal">
                     <div class="modal__form">
                         <p class="modal__title">Edit Profile</p>
                         <input type="text" placeholder="Name" class="modal__input modal__username" maxlength="16">
                         <input type="text" placeholder="About Me" class="modal__input modal__occupation" maxlength="20">
-                        <button class="modal__button modal__save-button hover">Save</button>
+                        <button type="submit" class="modal__button modal__save-button hover">Save</button>
                     </div>
                     <button class="modal__close profile-modal__close hover"></button>
                 </div>
-                </div>
+            </form>
 
-                <div class="image-modal__container modal__container"> 
+                <form class="image-modal__container modal__container"> 
                     <div class="modal">
                         <div class="modal__form">
                             <p class="modal__title">New Place</p>
                             <input type="text" placeholder="Title" class="modal__input modal__image-title" >
                             <input type="text" placeholder="Image link" class="modal__input modal__link" >
-                            <button class="modal__button modal__create-button hover">Create</button>
+                            <button type="submit" class="modal__button modal__create-button hover">Create</button>
                         </div>
                         <button class="modal__close image-modal__close hover"></button>
                     </div>
-                    </div>
+                </form>
 
-                    <div 
-                    class="popup-modal__container modal__container"> 
+                <form class="popup-modal__container modal__container"> 
                     <div class="modal_dark">
                         <div class="modal__form">
                             <figure class="image-popup">
-
                                 <img 
                                     src="/#"
                                     class="image-popup__image" 
                                     alt="card image">
                                 <figcaption
                                     class="image-popup__description">
-                                </figcaption>
-                              
+                                </figcaption>                            
                             </figure>
-
                         </div>
                         <button class="modal__close popup-modal__close hover"></button>
                     </div>
+                    </form>
             </main>
 
             <template id="photo-grid__template"> 

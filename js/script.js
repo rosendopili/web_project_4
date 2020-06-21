@@ -25,50 +25,46 @@ const initialCards = [
     }, 
 ];
 
-let photoGrid = document.querySelector('.photo-grid'); 
-let profileModalContainer = document.querySelector('.profile-modal__container'); 
-let imageModalContainer = document.querySelector('.image-modal__container'); 
-let imagePopupModalContainer = document.querySelector('.popup-modal__container');
-let body = document.querySelector('body'); 
-let username = document.querySelector('.profile__username'); 
-let occupation = document.querySelector('.profile__occupation'); 
-let form = document.querySelector('.modal__form');
-let saveButton = document.querySelector('.modal__save-button'); 
-let newUsername = document.querySelector('.modal__username'); 
-let newOccupation = document.querySelector('.modal__occupation'); 
-let newTitle = document.querySelector('.modal__image-title'); 
-let newLink = document.querySelector('.modal__link'); 
-let profileCloseIcon = document.querySelector('.profile-modal__close'); 
-let imageCloseIcon = document.querySelector('.image-modal__close'); 
-let editButton = document.querySelector('.profile__edit-button'); 
-let addPhotoButton = document.querySelector('.profile__add-button'); 
-let savePhotoButton = document.querySelector('.modal__create-button'); 
-let photoTemplate = document.querySelector('#photo-grid__template').content;
-let imagePopupCloseIcon = document.querySelector('.popup-modal__close')
-let imagePopup = document.querySelector('.image-popup__image');
-let imagePopupDescription = document.querySelector('.image-popup__description');
-
-const preventScroll = () =>{
-    body.classList.toggle('scroll'); 
-}
+const photoGrid = document.querySelector('.photo-grid'); 
+const profileModalContainer = document.querySelector('.profile-modal__container'); 
+const imageModalContainer = document.querySelector('.image-modal__container'); 
+const imagePopupModalContainer = document.querySelector('.popup-modal__container');
+const body = document.querySelector('body'); 
+const username = document.querySelector('.profile__username'); 
+const occupation = document.querySelector('.profile__occupation'); 
+const form = document.querySelector('.modal__form');
+const saveButton = document.querySelector('.modal__save-button'); 
+const newUsername = document.querySelector('.modal__username'); 
+const newOccupation = document.querySelector('.modal__occupation'); 
+const newTitle = document.querySelector('.modal__image-title'); 
+const newLink = document.querySelector('.modal__link'); 
+const profileCloseIcon = document.querySelector('.profile-modal__close'); 
+const imageCloseIcon = document.querySelector('.image-modal__close'); 
+const editButton = document.querySelector('.profile__edit-button'); 
+const addPhotoButton = document.querySelector('.profile__add-button'); 
+const savePhotoButton = document.querySelector('.modal__create-button'); 
+const photoTemplate = document.querySelector('#photo-grid__template').content;
+const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
+const imagePopup = document.querySelector('.image-popup__image');
+const imagePopupDescription = document.querySelector('.image-popup__description');
 
 const modalToggle = (modal) => {
     modal.classList.toggle('modal__on'); 
-    preventScroll(); 
-}
+    body.classList.toggle('scroll'); 
+}; 
 
 const imagePopupOpen = (data) => {
     imagePopup.setAttribute('src', `${data.link}`) 
     imagePopupDescription.textContent = `${data.name}`; 
- }
+ }; 
 
 
 const addImageCard = (data) => {
     const photo = photoTemplate.cloneNode(true); 
-    let photoGridImage = photo.querySelector('.photo-grid__image'); 
-    let photoGridDescription = photo.querySelector('.photo-grid__description'); 
-    let photoGridHeart = photo.querySelector('.photo-grid__heart-react');
-    let deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
+    const photoGridImage = photo.querySelector('.photo-grid__image'); 
+    const photoGridDescription = photo.querySelector('.photo-grid__description'); 
+    const photoGridHeart = photo.querySelector('.photo-grid__heart-react');
+    const deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
    
 
     photoGridDescription.textContent = data.name; 
@@ -88,27 +84,29 @@ const addImageCard = (data) => {
     });
 
     return photo; 
-}
+}; 
 
 const loadImageCard = (data) => {
     photoGrid.prepend(addImageCard(data)); 
-}
+}; 
 
 initialCards.forEach((data) =>{
     loadImageCard(data); 
-})
+}); 
 
-saveButton.addEventListener('click', () => {
+saveButton.addEventListener('click', (e) => {
+    e.preventDefault(); 
     username.textContent = newUsername.value; 
     occupation.textContent = newOccupation.value;
 
     modalToggle(profileModalContainer); 
     
-    newUsername.value = ""; 
-    newOccupation.value = ""; 
+    newUsername.value.reset(); 
+    newOccupation.value.reset(); 
 })
 
-savePhotoButton.addEventListener('click', () => {
+savePhotoButton.addEventListener('click', (e) => {
+    e.preventDefault(); 
     loadImageCard({
         name: newTitle.value, 
         link: newLink.value
@@ -116,8 +114,8 @@ savePhotoButton.addEventListener('click', () => {
 
     modalToggle(imageModalContainer);
 
-    newTitle.value = ""; 
-    newLink.value = ""; 
+    newTitle.value.reset(); 
+    newLink.value.reset(); 
 }); 
 
 editButton.addEventListener('click', () => {

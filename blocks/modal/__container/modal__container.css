@@ -1,0 +1,7 @@
+.modal__container{
+    visibility: hidden; 
+    opacity: 0; 
+    transition: visibility 1s, opacity 1s; 
+    transition-timing-function: linear; 
+    pointer-events: none; 
+}

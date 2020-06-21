@@ -26,8 +26,8 @@ const initialCards = [
 ];
 
 let photoGrid = document.querySelector('.photo-grid'); 
-let profileModalContainer = document.querySelector('.modal__container'); 
-let imageModalContainer = document.querySelector('.imageModal__container'); 
+let profileModalContainer = document.querySelector('.profile-modal__container'); 
+let imageModalContainer = document.querySelector('.image-modal__container'); 
 let imagePopupModalContainer = document.querySelector('.popup-modal__container');
 let body = document.querySelector('body'); 
 let username = document.querySelector('.profile__username'); 
@@ -39,7 +39,7 @@ let newOccupation = document.querySelector('.modal__occupation');
 let newTitle = document.querySelector('.modal__image-title'); 
 let newLink = document.querySelector('.modal__link'); 
 let profileCloseIcon = document.querySelector('.profile-modal__close'); 
-let imageCloseIcon = document.querySelector('.imageModal__close'); 
+let imageCloseIcon = document.querySelector('.image-modal__close'); 
 let editButton = document.querySelector('.profile__edit-button'); 
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
@@ -53,7 +53,10 @@ const preventScroll = () =>{
 }
 
 const modalToggle = (modal) => {
-    modal.classList.toggle('modal__off'); 
+    modal.classList.toggle('modal__on'); 
+    console.log(profileModalContainer.classList + " profileModalContainer")
+    console.log(imageModalContainer.classList + " imageModalContainer")
+    console.log(imagePopupModalContainer.classList + " imagePopupModalContainer")
     preventScroll(); 
 }
 

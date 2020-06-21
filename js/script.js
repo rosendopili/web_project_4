@@ -54,9 +54,6 @@ const preventScroll = () =>{
 
 const modalToggle = (modal) => {
     modal.classList.toggle('modal__on'); 
-    console.log(profileModalContainer.classList + " profileModalContainer")
-    console.log(imageModalContainer.classList + " imageModalContainer")
-    console.log(imagePopupModalContainer.classList + " imagePopupModalContainer")
     preventScroll(); 
 }
 

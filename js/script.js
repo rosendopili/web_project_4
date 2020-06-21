@@ -28,6 +28,7 @@ const initialCards = [
 let photoGrid = document.querySelector('.photo-grid'); 
 let profileModalContainer = document.querySelector('.modal__container'); 
 let imageModalContainer = document.querySelector('.imageModal__container'); 
+let imagePopupModalContainer = document.querySelector('.popup-modal__container');
 let body = document.querySelector('body'); 
 let username = document.querySelector('.profile__username'); 
 let occupation = document.querySelector('.profile__occupation'); 
@@ -43,11 +44,19 @@ let editButton = document.querySelector('.profile__edit-button');
 let addPhotoButton = document.querySelector('.profile__add-button'); 
 let savePhotoButton = document.querySelector('.modal__create-button'); 
 let photoTemplate = document.querySelector('#photo-grid__template').content;
-let imagePopupModal = document.querySelector('.popup-modal__container'); 
+ 
 let imagePopupCloseIcon = document.querySelector('.popup-modal__close')
 let imagePopup = document.querySelector('.image-popup__image');
 let imagePopupDescription = document.querySelector('.image-popup__description');
-let imagePopupClose = document.querySelector('.popup-modal__close');   
+
+const modalToggle = (modal) => {
+    console.log(profileModalContainer); 
+    console.log(imageModalContainer); 
+    console.log(profileModalContainer.classList); 
+    console.log(imageModalContainer.classList); 
+    modal.classList.toggle('modal__off'); 
+    preventScroll(); 
+}
 
 function imagePopupOpen(data) {
     imagePopup.setAttribute('src', `${data.link}`) 
@@ -76,7 +85,7 @@ const addImageCard = (data) => {
 
     photoGridImage.addEventListener('click', () =>{
         imagePopupOpen(data); 
-        popupModal(); 
+        modalToggle(imagePopupModalContainer); 
     });
 
     return photo; 
@@ -90,56 +99,56 @@ initialCards.forEach((data) =>{
     loadImageCard(data); 
 })
 
-
 function preventScroll(){
-    if (body.classList.contains('scroll') !== true){
-        body.classList.add('scroll'); 
-    }else{
-        body.classList.remove('scroll'); 
-    }
+    body.classList.toggle('scroll'); 
 }
 
-function profileModal(){
-    profileModalContainer.classList.toggle('modal__off'); 
-    preventScroll(); 
-}
-
-
-function editProfile(){
+saveButton.addEventListener('click', () => {
     username.textContent = newUsername.value; 
-    occupation.textContent = newOccupation.value; 
-    modal(); 
+    occupation.textContent = newOccupation.value;
+
+    modalToggle(profileModalContainer); 
+    
     newUsername.value = ""; 
     newOccupation.value = ""; 
-}
+})
 
-function imageModal(){
-    imageModalContainer.classList.toggle('modal__off'); 
-    preventScroll(); 
-}
-
-
-const addNewImageCard = () => {
+savePhotoButton.addEventListener('click', () => {
     loadImageCard({
         name: newTitle.value, 
         link: newLink.value
     }); 
-    imageModal();
+
+    modalToggle(imageModalContainer);
+    
     newTitle.value = ""; 
     newLink.value = ""; 
-}
+}); 
 
-function popupModal(){
-    imagePopupModal.classList.toggle('modal__off'); 
+
+editButton.addEventListener('click', () => {
+    console.log(profileModalContainer.classList); 
+    modalToggle(profileModalContainer); 
     preventScroll(); 
-}
+})
+
+profileCloseIcon.addEventListener('click', () =>{
+    modalToggle(profileModalContainer)
+}); 
+
+addPhotoButton.addEventListener('click', () =>{
+    console.log(imageModalContainer.classList); 
+    modalToggle(imageModalContainer)
+    preventScroll(); 
+}); 
+
+imageCloseIcon.addEventListener('click', () => {
+    modalToggle(imageModalContainer); 
+}); 
 
 
-saveButton.addEventListener('click', editProfile);
-profileCloseIcon.addEventListener('click', profileModal); 
-editButton.addEventListener('click', profileModal); 
-savePhotoButton.addEventListener('click', addNewImageCard); 
-addPhotoButton.addEventListener('click', imageModal); 
-imageCloseIcon.addEventListener('click', imageModal); 
-imagePopupClose.addEventListener('click', popupModal); 
+imagePopupCloseIcon.addEventListener('click', () =>{
+    modalToggle(imagePopupModalContainer); 
+}); 
+
 

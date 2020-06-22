@@ -4,7 +4,7 @@
     align-self: center; 
     border: 1px solid var(--white); 
     border-radius: 2px; 
-    background-image: url(../../../assets/Plus.svg);
+    background-image: url('../../../assets/Plus.svg');
     background-repeat: no-repeat; 
     background-color: transparent; 
     background-position: center;

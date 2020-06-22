@@ -44,20 +44,23 @@
                 <section class="photo-grid">
                     
                 </section>
-
-            <form class="profile-modal__container modal__container"> 
-                <div class="modal">
-                    <div class="modal__form">
-                        <p class="modal__title">Edit Profile</p>
-                        <input type="text" placeholder="Name" class="modal__input modal__username" maxlength="16">
-                        <input type="text" placeholder="About Me" class="modal__input modal__occupation" maxlength="20">
-                        <button type="submit" class="modal__button modal__save-button hover">Save</button>
+            
+            <div class="profile-modal__container modal__container"> 
+                <form class="profile-modal__form">
+                    <div class="modal">  
+                        <div class="modal__form">
+                            <p class="modal__title">Edit Profile</p>
+                            <input type="text" placeholder="Name" class="modal__input modal__username" maxlength="16">
+                            <input type="text" placeholder="About Me" class="modal__input modal__occupation" maxlength="20">
+                            <button type="submit" class="modal__button modal__save-button hover">Save</button>
+                        </div>
+                        <button class="modal__close profile-modal__close hover"></button>
                     </div>
-                    <button class="modal__close profile-modal__close hover"></button>
-                </div>
-            </form>
-
-                <form class="image-modal__container modal__container"> 
+                </form>
+            </div>
+            
+            <div class="image-modal__container modal__container"> 
+                <form class="image-modal__form">
                     <div class="modal">
                         <div class="modal__form">
                             <p class="modal__title">New Place</p>
@@ -68,8 +71,9 @@
                         <button class="modal__close image-modal__close hover"></button>
                     </div>
                 </form>
+            </div>
 
-                <form class="popup-modal__container modal__container"> 
+                <div class="popup-modal__container modal__container"> 
                     <div class="modal_dark">
                         <div class="modal__form">
                             <figure class="image-popup">
@@ -84,8 +88,8 @@
                         </div>
                         <button class="modal__close popup-modal__close hover"></button>
                     </div>
-                    </form>
-            </main>
+                </form>
+            </div>
 
             <template id="photo-grid__template"> 
                 <div class="photo-grid__card">

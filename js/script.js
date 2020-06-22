@@ -26,14 +26,13 @@ const initialCards = [
 ];
 
 const photoGrid = document.querySelector('.photo-grid'); 
+const profileModalForm = document.querySelector('.profile-modal__form'); 
+const imageModalForm = document.querySelector('.image-modal__form'); 
 const profileModalContainer = document.querySelector('.profile-modal__container'); 
 const imageModalContainer = document.querySelector('.image-modal__container'); 
 const imagePopupModalContainer = document.querySelector('.popup-modal__container');
-const body = document.querySelector('body'); 
 const username = document.querySelector('.profile__username'); 
 const occupation = document.querySelector('.profile__occupation'); 
-const form = document.querySelector('.modal__form');
-const saveButton = document.querySelector('.modal__save-button'); 
 const newUsername = document.querySelector('.modal__username'); 
 const newOccupation = document.querySelector('.modal__occupation'); 
 const newTitle = document.querySelector('.modal__image-title'); 
@@ -42,7 +41,6 @@ const profileCloseIcon = document.querySelector('.profile-modal__close');
 const imageCloseIcon = document.querySelector('.image-modal__close'); 
 const editButton = document.querySelector('.profile__edit-button'); 
 const addPhotoButton = document.querySelector('.profile__add-button'); 
-const savePhotoButton = document.querySelector('.modal__create-button'); 
 const photoTemplate = document.querySelector('#photo-grid__template').content;
 const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
 const imagePopup = document.querySelector('.image-popup__image');
@@ -50,7 +48,6 @@ const imagePopupDescription = document.querySelector('.image-popup__description'
 
 const modalToggle = (modal) => {
     modal.classList.toggle('modal__on'); 
-    body.classList.toggle('scroll'); 
 }; 
 
 const imagePopupOpen = (data) => {
@@ -96,18 +93,16 @@ initialCards.forEach((data) =>{
     loadImageCard(data); 
 }); 
 
-profileModalContainer.addEventListener('submit', (e) => {
+profileModalForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
     username.textContent = newUsername.value; 
     occupation.textContent = newOccupation.value;
 
     modalToggle(profileModalContainer); 
-    
-    newUsername.value.reset(); 
-    newOccupation.value.reset(); 
+    profileModalForm.reset(); 
 })
 
-imageModalContainer.addEventListener('submit', (e) => {
+imageModalForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
     loadImageCard({
         name: newTitle.value, 
@@ -115,9 +110,7 @@ imageModalContainer.addEventListener('submit', (e) => {
     }); 
 
     modalToggle(imageModalContainer);
-
-    newTitle.value.reset(); 
-    newLink.value.reset(); 
+    imageModalForm.reset(); 
 }); 
 
 editButton.addEventListener('click', (e) => {

@@ -12,7 +12,9 @@ This is a responsive web-design depicting a travel-themed photo gallery.  The la
 
 **Figma**
 
-* [Link to the project in Figma](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* [Figma link to Project Phase 1](https://www.figma.com/file/mUgu8OSHWE0M6p6vfwmdu9/Sprint-4-Around-The-U.S.-desktop-mobile?node-id=0%3A1)
+* [Figma link to Project Phase 2](https://www.figma.com/file/avLHzpJw2dmU2NaDATZ6CX/Sprint-5%3A-Around-The-U.S.-%2F-desktop-%2B-mobile?node-id=0%3A1)
+* [Figma link to Project Phase 3](https://www.figma.com/file/KUbYgXnYElfzxCbcrlsOCE/Sprint-6%3A-Around-The-U.S.?node-id=1145%3A180)
 
 **Proficiencies demonstrated** 
 

@@ -1,11 +1,11 @@
 .modal__form{
     position: fixed; 
     width: 430px;
-    height: 330px;
+    height: auto;
     top: calc((100vh/2) - 165px); 
     left: calc((100vw/2) - 215px); 
     background-color: var(--white); 
-    border-radius: 10px; 
+    border-radius: 10px;
     display: flex; 
     flex-direction: column;   
     text-align: left;   

@@ -5,12 +5,15 @@
 @import url('../blocks/main/main.css');
 @import url('../blocks/photo-grid/photo-grid.css');
 @import url('../blocks/profile/profile.css');
+@import url('../blocks/error/error.css'); 
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/hover/hover.css');
 @import url('../blocks/modal/modal.css');
 @import url('../blocks/display/display.css');
 @import url('../blocks/scroll/scroll.css'); 
 @import url('../blocks/image-popup/image-popup.css'); 
+
+
 
 :root{
     --black: #000000; 

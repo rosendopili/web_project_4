@@ -1,6 +1,5 @@
-@import url('__active/error__active.css'); 
-
-.error{
+.error__active{
+    display: block;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -10,7 +9,7 @@
 }
 
 @media screen and (max-width: 600px) {  
-    .error {
+    .error__active {
       margin: 5px 20px 0;
     }
   }

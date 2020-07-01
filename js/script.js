@@ -61,7 +61,7 @@ const closeCurrentForm = (e) => {
 
 const escapeHandler = (e) => {
     modalContainerArray.forEach((val) => {
-        if(e.key === 'Escape' && val.classList.contains('modal__on')){
+        if((e.keyCode == 27) && (val.classList.contains('modal__on'))){
         modalClose(val); 
         }
     })

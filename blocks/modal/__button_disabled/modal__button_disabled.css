@@ -1,8 +1,7 @@
 .modal__button_disabled{
     pointer-events: none; 
     background-color: var(--white); 
-    box-shadow: 0px 0px 25px var(--black);
-    border-radius: 10px;
+    border-radius: 2px;
     border: 1px solid black;
     color: black;
     opacity: .2;

@@ -9,6 +9,7 @@
     display: flex; 
     flex-direction: column;   
     text-align: left;   
+    box-shadow: 0px 0px 25px var(--black);
 }
 
 @media only screen and (max-width: 415px){

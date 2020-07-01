@@ -45,16 +45,43 @@ const photoTemplate = document.querySelector('#photo-grid__template').content;
 const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
 const imagePopup = document.querySelector('.image-popup__image');
 const imagePopupDescription = document.querySelector('.image-popup__description');
+const overlayArray = Array.from(document.querySelectorAll('.modal')); 
+const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
 
-const modalToggle = (modal) => {
-    modal.classList.toggle('modal__on'); 
-}; 
+const overlayHandler = () =>{
+    overlayArray.forEach((val) => {
+     val.addEventListener('click', closeCurrentForm);   
+    })
+}
+
+const closeCurrentForm = (e) => {
+    modalClose(e.target.closest('.modal__container'));
+    e.target.removeEventListener('click', closeCurrentForm); 
+}
+
+const escapeHandler = (e) => {
+    modalContainerArray.forEach((val) => {
+        if(e.keyCode === 27 && val.classList.contains('modal__on')){
+        modalClose(val); 
+        }
+    })
+}
+
+const modalOpen = (modal) => {
+    overlayHandler(); 
+    modal.classList.add('modal__on');
+    document.addEventListener('keyup', escapeHandler); 
+}
+
+const modalClose = (modal) => {
+    modal.classList.remove('modal__on'); 
+    document.removeEventListener('keyup', escapeHandler); 
+}
 
 const imagePopupOpen = (data) => {
     imagePopup.setAttribute('src', `${data.link}`) 
     imagePopupDescription.textContent = `${data.name}`; 
  }; 
-
 
 const addImageCard = (data) => {
     const photo = photoTemplate.cloneNode(true); 
@@ -79,7 +106,7 @@ const addImageCard = (data) => {
     photoGridImage.addEventListener('click', (e) =>{
         e.preventDefault(); 
         imagePopupOpen(data); 
-        modalToggle(imagePopupModalContainer); 
+        modalOpen(imagePopupModalContainer); 
     });
 
     return photo; 
@@ -98,7 +125,7 @@ profileModalForm.addEventListener('submit', (e) => {
     username.textContent = newUsername.value; 
     occupation.textContent = newOccupation.value;
 
-    modalToggle(profileModalContainer); 
+    modalClose(profileModalContainer); 
     profileModalForm.reset(); 
 })
 
@@ -109,33 +136,33 @@ imageModalForm.addEventListener('submit', (e) => {
         link: newLink.value
     }); 
 
-    modalToggle(imageModalContainer);
+    modalClose(imageModalContainer);
     imageModalForm.reset(); 
 }); 
 
 editButton.addEventListener('click', (e) => {
     e.preventDefault()
-    modalToggle(profileModalContainer); 
+    modalOpen(profileModalContainer); 
 })
 
 profileCloseIcon.addEventListener('click', (e) =>{
     e.preventDefault()
-    modalToggle(profileModalContainer); 
+    modalClose(profileModalContainer); 
 }); 
 
 addPhotoButton.addEventListener('click', (e) =>{
     e.preventDefault()
-    modalToggle(imageModalContainer)
+    modalOpen(imageModalContainer)
 }); 
 
 imageCloseIcon.addEventListener('click', (e) => {
     e.preventDefault()
-    modalToggle(imageModalContainer); 
+    modalClose(imageModalContainer); 
 }); 
 
 imagePopupCloseIcon.addEventListener('click', (e) =>{
     e.preventDefault()
-    modalToggle(imagePopupModalContainer); 
+    modalClose(imagePopupModalContainer); 
 }); 
 
 

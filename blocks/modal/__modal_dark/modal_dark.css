@@ -1,11 +1,3 @@
 .modal_dark{
-    position: fixed;
-    width: 100vw; 
-    height: 100vh;
-    z-index: 1; 
     background-color:var(--dark-overlay); 
-    top: 0; 
-    left: 0; 
-    display: flex; 
-    color: var(--black);
 }

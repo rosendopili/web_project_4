@@ -4,4 +4,5 @@
     transition: visibility .6s, opacity .6s; 
     transition-timing-function: linear; 
     pointer-events: none; 
+    z-index: -1; 
 }

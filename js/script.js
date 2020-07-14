@@ -47,15 +47,18 @@ const imagePopup = document.querySelector('.image-popup__image');
 const imagePopupDescription = document.querySelector('.image-popup__description');
 const overlayArray = Array.from(document.querySelectorAll('.modal')); 
 const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
+const modalForm = document.querySelector('.all__form'); 
 
 const overlayHandler = () =>{
     overlayArray.forEach((val) => {
-     val.addEventListener('click', closeCurrentForm);   
+     val.addEventListener('click', closeCurrentForm);  
     })
 }
 
 const closeCurrentForm = (e) => {
+if (e.target.classList.contains('modal') || e.target.classList.contains('popup-modal_closed')){
     modalClose(e.target.closest('.modal__container'));
+}
     e.target.removeEventListener('click', closeCurrentForm); 
 }
 
@@ -68,12 +71,14 @@ const escapeHandler = (e) => {
 }
 
 const modalOpen = (modal) => {
+    console.log(modal); 
     overlayHandler(); 
     modal.classList.add('modal__on');
     document.addEventListener('keyup', escapeHandler); 
 }
 
 const modalClose = (modal) => {
+    console.log(modal); 
     modal.classList.remove('modal__on'); 
     document.removeEventListener('keyup', escapeHandler); 
 }
@@ -88,7 +93,7 @@ const addImageCard = (data) => {
     const photoGridImage = photo.querySelector('.photo-grid__image'); 
     const photoGridDescription = photo.querySelector('.photo-grid__description'); 
     const photoGridHeart = photo.querySelector('.photo-grid__heart-react');
-    const deleteIcon = photo.querySelector('.photo-grid__delete-icon') 
+    const deleteIcon = photo.querySelector('.photo-grid__delete-icon'); 
    
 
     photoGridDescription.textContent = data.name; 

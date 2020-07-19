@@ -59,14 +59,14 @@ const profileCloseIcon = document.querySelector('.profile-modal__close');
 const imageCloseIcon = document.querySelector('.image-modal__close'); 
 const editButton = document.querySelector('.profile__edit-button'); 
 const addPhotoButton = document.querySelector('.profile__add-button'); 
-const photoTemplate = document.querySelector('#photo-grid__template').content;
 const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
+const imagePopup = document.querySelector('.image-popup__image');
+const imagePopupDescription = document.querySelector('.image-popup__description');
 const overlayArray = Array.from(document.querySelectorAll('.modal')); 
 const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
 
 const loadImageCard = (data) => {
-    console.log(data); 
-    const card = new Card(data, photoTemplate); 
+    const card = new Card(data, '.photo-grid__template'); 
     photoGrid.prepend(card.generateCard()); 
 }; 
 
@@ -94,6 +94,10 @@ const escapeHandler = (e) => {
         }
     })
 }
+const imagePopupOpen = (name, link) => {
+    imagePopup.setAttribute('src', `${link}`) 
+    imagePopupDescription.textContent = `${name}`; 
+ }; 
 
 const modalOpen = (modal) => {
     console.log(modal); 
@@ -153,3 +157,4 @@ editButton.addEventListener('click', (e) => {
 })
 
 
+export { imagePopupOpen, modalOpen, overlayHandler } ; 

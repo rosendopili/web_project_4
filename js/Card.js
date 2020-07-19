@@ -1,9 +1,22 @@
+
+const imagePopupOpen = (data) => {
+    imagePopup.setAttribute('src', `${data.link}`) 
+    imagePopupDescription.textContent = `${data.name}`; 
+ }; 
+
+ const modalOpen = (modal) => {
+    console.log(modal); 
+    overlayHandler(); 
+    modal.classList.add('modal__on');
+    document.addEventListener('keyup', escapeHandler); 
+}
+
 class Card {
     constructor(data, cardTemplateSelector){
         this._link = data.link; 
         this._text = data.text; 
         this._cardTemplateSelector = cardTemplateSelector; 
-    }
+    } 
 
     _getCardTemplate(){
         const cardTemplate = document
@@ -19,6 +32,8 @@ class Card {
         const photoGridImage = this._card.querySelector('.photo-grid__image'); 
         const photoGridHeart = this._card.querySelector('.photo-grid__heart-react');
         const deleteIcon = this._card.querySelector('.photo-grid__delete-icon'); 
+        const imagePopupModalContainer = document.querySelector('.popup-modal__container');
+
 
         photoGridHeart.addEventListener('click', (e)=> {
             e.preventDefault(); 
@@ -40,14 +55,13 @@ class Card {
         this._card = element; 
 
         element.querySelector('.photo-grid__decription') = this._name; 
-        element.querySelector('.photo-grid__image').style.backgroundImage = this._link; 
+        element.querySelector('.photo-grid__image').style.backgroundImage = `${this._link}`; 
     
         this._addEventListeners(); 
     
         return this._card; 
     }
 
-
-
 }
 
+export default Card; 

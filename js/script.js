@@ -1,4 +1,5 @@
 import FormValidator from 'FormValidator.js'; 
+import Card from 'Card.js'; 
 
 const defaultConfig = {
     inputSelector: ".modal__input",
@@ -60,10 +61,18 @@ const editButton = document.querySelector('.profile__edit-button');
 const addPhotoButton = document.querySelector('.profile__add-button'); 
 const photoTemplate = document.querySelector('#photo-grid__template').content;
 const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
-const imagePopup = document.querySelector('.image-popup__image');
-const imagePopupDescription = document.querySelector('.image-popup__description');
 const overlayArray = Array.from(document.querySelectorAll('.modal')); 
 const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
+
+const loadImageCard = (data) => {
+    console.log(data); 
+    const card = new Card(data, photoTemplate); 
+    photoGrid.prepend(card.generateCard()); 
+}; 
+
+initialCards.forEach((data) =>{
+    loadImageCard(data); 
+}); 
 
 const overlayHandler = () =>{
     overlayArray.forEach((val) => {
@@ -98,19 +107,6 @@ const modalClose = (modal) => {
     modal.classList.remove('modal__on'); 
     document.removeEventListener('keyup', escapeHandler); 
 }
-
-const imagePopupOpen = (data) => {
-    imagePopup.setAttribute('src', `${data.link}`) 
-    imagePopupDescription.textContent = `${data.name}`; 
- }; 
-
-const loadImageCard = (data) => {
-    photoGrid.prepend(addImageCard(data)); 
-}; 
-
-initialCards.forEach((data) =>{
-    loadImageCard(data); 
-}); 
 
 profileModalForm.addEventListener('submit', (e) => {
     e.preventDefault(); 

@@ -1,3 +1,22 @@
+import FormValidator from 'FormValidator.js'; 
+
+const defaultConfig = {
+    inputSelector: ".modal__input",
+    submitButtonSelector: ".modal__button",
+    inactiveButtonClass: "modal__button_disabled",
+    inputErrorClass: "modal__input_error",
+    errorClass: "error__active"
+}
+
+const profileModalForm = document.querySelector('.profile-modal__form'); 
+const imageModalForm = document.querySelector('.image-modal__form'); 
+
+const editProfileValidation = new FormValidator(defaultConfig, profileModalForm); 
+const addCardValidation = new FormValidator(defaultConfig, imageModalForm); 
+
+editProfileValidation.enableValidation(); 
+addCardValidation.enableValidation(); 
+
 const initialCards = [
     {
         name: "Yosemite Valley",
@@ -26,8 +45,6 @@ const initialCards = [
 ];
 
 const photoGrid = document.querySelector('.photo-grid'); 
-const profileModalForm = document.querySelector('.profile-modal__form'); 
-const imageModalForm = document.querySelector('.image-modal__form'); 
 const profileModalContainer = document.querySelector('.profile-modal__container'); 
 const imageModalContainer = document.querySelector('.image-modal__container'); 
 const imagePopupModalContainer = document.querySelector('.popup-modal__container');

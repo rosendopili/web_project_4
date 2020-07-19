@@ -22,14 +22,14 @@ const displayInputError = (formItem, inputItem, {errorClass, inputErrorClass}) =
   
   //checking the whole form's validity state to toggle button
   
-  const hasInvalidInput = (inputArray) => {
+  const isInvalid = (inputArray) => {
     return inputArray.some((inputItem) => {
       return !inputItem.validity.valid;
     });
   };
   
   const toggleButtonState = (inputArray, buttonItem, {inactiveButtonClass, errorClass}) => {
-    if (hasInvalidInput(inputArray)) {
+    if (isInvalid(inputArray)) {
       buttonItem.classList.add(inactiveButtonClass);
       buttonItem.classList.add(errorClass);
     }

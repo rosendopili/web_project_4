@@ -64,7 +64,6 @@ const imagePopup = document.querySelector('.image-popup__image');
 const imagePopupDescription = document.querySelector('.image-popup__description');
 const overlayArray = Array.from(document.querySelectorAll('.modal')); 
 const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
-const modalForm = document.querySelector('.all__form'); 
 
 const overlayHandler = () =>{
     overlayArray.forEach((val) => {
@@ -105,35 +104,6 @@ const imagePopupOpen = (data) => {
     imagePopupDescription.textContent = `${data.name}`; 
  }; 
 
-const addImageCard = (data) => {
-    const photo = photoTemplate.cloneNode(true); 
-    const photoGridImage = photo.querySelector('.photo-grid__image'); 
-    const photoGridDescription = photo.querySelector('.photo-grid__description'); 
-    const photoGridHeart = photo.querySelector('.photo-grid__heart-react');
-    const deleteIcon = photo.querySelector('.photo-grid__delete-icon'); 
-   
-
-    photoGridDescription.textContent = data.name; 
-    photoGridImage.style.backgroundImage = `url(${data.link})`; 
-
-    photoGridHeart.addEventListener('click', (e)=> {
-        e.preventDefault(); 
-        photoGridHeart.classList.toggle('photo-grid__heart-react_dark')
-     });
-
-    deleteIcon.addEventListener('click', (e)=> {
-    e.target.closest('.photo-grid__card').remove();
-    });
-
-    photoGridImage.addEventListener('click', (e) =>{
-        e.preventDefault(); 
-        imagePopupOpen(data); 
-        modalOpen(imagePopupModalContainer); 
-    });
-
-    return photo; 
-}; 
-
 const loadImageCard = (data) => {
     photoGrid.prepend(addImageCard(data)); 
 }; 
@@ -162,19 +132,9 @@ imageModalForm.addEventListener('submit', (e) => {
     imageModalForm.reset(); 
 }); 
 
-editButton.addEventListener('click', (e) => {
-    e.preventDefault()
-    modalOpen(profileModalContainer); 
-})
-
 profileCloseIcon.addEventListener('click', (e) =>{
     e.preventDefault()
     modalClose(profileModalContainer); 
-}); 
-
-addPhotoButton.addEventListener('click', (e) =>{
-    e.preventDefault()
-    modalOpen(imageModalContainer)
 }); 
 
 imageCloseIcon.addEventListener('click', (e) => {
@@ -186,5 +146,14 @@ imagePopupCloseIcon.addEventListener('click', (e) =>{
     e.preventDefault()
     modalClose(imagePopupModalContainer); 
 }); 
+
+addPhotoButton.addEventListener('click', (e) =>{
+    e.preventDefault()
+    modalOpen(imageModalContainer)
+}); 
+editButton.addEventListener('click', (e) => {
+    e.preventDefault()
+    modalOpen(profileModalContainer); 
+})
 
 

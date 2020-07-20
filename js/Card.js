@@ -1,4 +1,4 @@
-import { imagePopupOpen, modalOpen, overlayHandler } from './utils.js'; 
+import { imagePopupOpen, modalOpen } from './utils.js'; 
 
 class Card {
     constructor(data, cardTemplateSelector){

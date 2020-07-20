@@ -29,7 +29,10 @@
                                 Jacques Cousteau
                             </h1>
 
-                            <button class="profile__edit-button hover"></button>
+                            <button 
+                                class="profile__edit-button hover"
+                                name="edit profile"    
+                            ></button>
 
                             <p class="profile__occupation">
                                 Explorer
@@ -37,7 +40,9 @@
                         </div>
                     </div>
 
-                    <button class="profile__add-button hover">
+                    <button 
+                        class="profile__add-button hover"
+                        name="add new image">
                     </button>
                 </section>
 
@@ -76,9 +81,17 @@
                                 id="occupation-error"    
                                 class="error"> 
                             </span>
-                            <button type="submit" class="modal__button modal__save-button hover">Save</button>
+                            <button 
+                                type="submit" 
+                                class="modal__button modal__save-button hover"
+                                name="save profile">
+                                Save
+                            </button>
                         </div>
-                        <button class="modal__close profile-modal__close hover"></button>
+                        <button 
+                            class="modal__close profile-modal__close hover"
+                            name="close profile edit button">
+                        </button>
                     </div>
                 </form>
             </div>
@@ -95,7 +108,7 @@
                                 placeholder="Title" 
                                 class="modal__input modal__image-title" 
                                 id="title" 
-                                minlength="1" 
+                                minlength="2" 
                                 maxlength="30" 
                                 required>
                             <span 
@@ -113,9 +126,16 @@
                                 class="error"> 
                             </span>
                             <button 
-                            type="submit" class="modal__button modal__create-button hover">Create</button>
+                                type="submit" 
+                                class="modal__button modal__create-button hover"
+                                name="create image">
+                                Create
+                            </button>
                         </div>
-                        <button class="modal__close image-modal__close hover"></button>
+                        <button 
+                            class="modal__close image-modal__close hover"
+                            name="close image modal">
+                        </button>
                     </div>
                 </form>
             </div>
@@ -128,31 +148,37 @@
                                     src="/#"
                                     class="image-popup__image" 
                                     alt="card image"
-                                    id="image-popup"
-                                    name="image-popup">
+                                    id="image-popup">
                                 <figcaption
                                     class="image-popup__description"
-                                    id="image-popup-caption"
-                                    name="image-popup-caption">
+                                    id="image-popup-caption">
                                 </figcaption>                            
                             </figure>
                         </div>
-                        <button class="modal__close popup-modal__close hover"></button>
+                        <button 
+                            class="modal__close popup-modal__close hover"
+                            name="close modal"></button>
                     </div>
                 </div>
-
-            <template class="photo-grid__template"> 
-                <div class="photo-grid__card">
-                    <button class="photo-grid__delete-icon hover"></button>
-                    <div class="photo-grid__image"
-                        ></div> 
-                    <div class="photo-grid__caption">
-                        <h2 class="photo-grid__description">
-                        </h2>
-                        <button class="photo-grid__heart-react hover"></button>
+            </main>
+                <template class="photo-grid__template"> 
+                    <div class="photo-grid__card">
+                        <button 
+                            class="photo-grid__delete-icon hover"
+                            name="delete">
+                        </button>
+                        <div class="photo-grid__image"
+                            ></div> 
+                        <div class="photo-grid__caption">
+                            <h2 class="photo-grid__description">
+                            </h2>
+                            <button 
+                                class="photo-grid__heart-react hover"
+                                name="like picture">
+                            </button>
+                        </div>
                     </div>
-                </div>
-            </template>
+                </template>
 
             <footer class="footer">
                 <p class="footer__copyright">

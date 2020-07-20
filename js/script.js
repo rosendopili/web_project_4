@@ -1,6 +1,6 @@
 import FormValidator from './FormValidator.js'; 
 import Card from './Card.js'; 
-import { imagePopupOpen, modalOpen, overlayHandler, escapeHandler, closeCurrentForm, modalClose} from './utils.js'; 
+import { modalOpen, modalClose} from './utils.js'; 
 
 const defaultConfig = {
     inputSelector: ".modal__input",

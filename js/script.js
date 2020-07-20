@@ -1,5 +1,6 @@
 import FormValidator from './FormValidator.js'; 
 import Card from './Card.js'; 
+import { imagePopupOpen, modalOpen, overlayHandler, escapeHandler, closeCurrentForm, modalClose} from './utils.js'; 
 
 const defaultConfig = {
     inputSelector: ".modal__input",
@@ -60,10 +61,6 @@ const imageCloseIcon = document.querySelector('.image-modal__close');
 const editButton = document.querySelector('.profile__edit-button'); 
 const addPhotoButton = document.querySelector('.profile__add-button'); 
 const imagePopupCloseIcon = document.querySelector('.popup-modal__close');
-const imagePopup = document.querySelector('.image-popup__image');
-const imagePopupDescription = document.querySelector('.image-popup__description');
-const overlayArray = Array.from(document.querySelectorAll('.modal')); 
-const modalContainerArray = Array.from(document.querySelectorAll('.modal__container')); 
 
 const loadImageCard = (data) => {
     const card = new Card(data, '.photo-grid__template'); 
@@ -73,44 +70,6 @@ const loadImageCard = (data) => {
 initialCards.forEach((data) =>{
     loadImageCard(data); 
 }); 
-
-const overlayHandler = () =>{
-    overlayArray.forEach((val) => {
-     val.addEventListener('click', closeCurrentForm);  
-    })
-}
-
-const closeCurrentForm = (e) => {
-if (e.target.classList.contains('modal') || e.target.classList.contains('popup-modal_closed')){
-    modalClose(e.target.closest('.modal__container'));
-}
-    e.target.removeEventListener('click', closeCurrentForm); 
-}
-
-const escapeHandler = (e) => {
-    modalContainerArray.forEach((val) => {
-        if((e.keyCode == 27) && (val.classList.contains('modal__on'))){
-        modalClose(val); 
-        }
-    })
-}
-const imagePopupOpen = (name, link) => {
-    imagePopup.setAttribute('src', `${link}`) 
-    imagePopupDescription.textContent = `${name}`; 
- }; 
-
-const modalOpen = (modal) => {
-    console.log(modal); 
-    overlayHandler(); 
-    modal.classList.add('modal__on');
-    document.addEventListener('keyup', escapeHandler); 
-}
-
-const modalClose = (modal) => {
-    console.log(modal); 
-    modal.classList.remove('modal__on'); 
-    document.removeEventListener('keyup', escapeHandler); 
-}
 
 profileModalForm.addEventListener('submit', (e) => {
     e.preventDefault(); 
@@ -132,29 +91,23 @@ imageModalForm.addEventListener('submit', (e) => {
     imageModalForm.reset(); 
 }); 
 
-profileCloseIcon.addEventListener('click', (e) =>{
-    e.preventDefault()
+profileCloseIcon.addEventListener('click', () =>{
     modalClose(profileModalContainer); 
 }); 
 
-imageCloseIcon.addEventListener('click', (e) => {
-    e.preventDefault()
+imageCloseIcon.addEventListener('click', () => {
     modalClose(imageModalContainer); 
 }); 
 
-imagePopupCloseIcon.addEventListener('click', (e) =>{
-    e.preventDefault()
+imagePopupCloseIcon.addEventListener('click', () =>{
     modalClose(imagePopupModalContainer); 
 }); 
 
-addPhotoButton.addEventListener('click', (e) =>{
-    e.preventDefault()
+addPhotoButton.addEventListener('click', () =>{
     modalOpen(imageModalContainer)
 }); 
-editButton.addEventListener('click', (e) => {
-    e.preventDefault()
+editButton.addEventListener('click', () => {
     modalOpen(profileModalContainer); 
 })
 
 
-export { imagePopupOpen, modalOpen, overlayHandler } ; 

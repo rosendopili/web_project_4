@@ -40,7 +40,6 @@ class FormValidator {
 
     _toggleButtonState(inputArray){
         const buttonItem = this._formElement.querySelector(this._submitButtonSelector);
-        console.log(buttonItem);  
         if (this._isInvalid(inputArray)) {
             buttonItem.classList.add(this._inactiveButtonClass);
             buttonItem.classList.add(this._errorClass);

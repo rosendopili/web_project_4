@@ -1,23 +1,4 @@
-import { imagePopupOpen, modalOpen, overlayHandler } from './script.js'; 
-
-// const imagePopupOpen = (data) => {
-//     imagePopup.setAttribute('src', `${data.link}`) 
-//     imagePopupDescription.textContent = `${data.name}`; 
-//  }; 
-
-//  const modalOpen = (modal) => {
-//     overlayHandler(); 
-//     modal.classList.add('modal__on');
-//     document.addEventListener('keyup', escapeHandler); 
-// }
-
-// const overlayArray = Array.from(document.querySelectorAll('.modal')); 
-
-// const overlayHandler = () =>{
-//     overlayArray.forEach((val) => {
-//      val.addEventListener('click', closeCurrentForm);  
-//     })
-// }
+import { imagePopupOpen, modalOpen, overlayHandler } from './utils.js'; 
 
 class Card {
     constructor(data, cardTemplateSelector){
@@ -27,15 +8,12 @@ class Card {
     } 
 
     _getCardTemplate(){
-        console.log(this._cardTemplateSelector); 
 
         const cardTemplate = document
             .querySelector(this._cardTemplateSelector)
             .content 
             .querySelector('.photo-grid__card')
             .cloneNode(true); 
-
-        console.log(cardTemplate);     
         
         return cardTemplate; 
     }
@@ -73,8 +51,6 @@ class Card {
             modalOpen(imagePopupModalContainer); 
         });
     }
-
- 
 
 }
 

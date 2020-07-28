@@ -5,6 +5,7 @@
 * CSS
 * JavaScript
 * Figma 
+* Form & Constraint Validation 
 
 **Intro**
 
@@ -23,6 +24,7 @@ This is a responsive web-design depicting a travel-themed photo gallery.  The la
 * Command of semantic HTML
 * Command of CSS media queries & responsive design principles 
 * Command of JavaScript DOM principles 
+* Re-factored code to Class based components 
 
 **Results**
 

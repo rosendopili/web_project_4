@@ -5,7 +5,7 @@
 * CSS
 * JavaScript
 * Figma 
-* Form & Constraint Validation 
+* JavaScript Form Validation API
 
 **Intro**
 
